@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void hallo(){}
 
-    public void derdadrübenisdumm(){}
+    public void derdadrübenisdumm(){
+
+    }
+    public void teamaufteilung() {}
 
 }
