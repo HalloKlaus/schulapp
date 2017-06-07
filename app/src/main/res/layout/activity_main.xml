@@ -20,7 +20,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:text="@string/Willkommensnachricht_ohne_Token"
+            android:text="@string/Willkommensnachricht_mit_Token"
             android:textSize="25sp"
             android:textAlignment="center"/>
 
@@ -33,7 +33,7 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
+            android:textSize="25sp"
             android:textStyle="italic"
             android:visibility="visible"
             android:inputType="text"/>
