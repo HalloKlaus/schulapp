@@ -35,14 +35,18 @@
             android:textSize="25sp"
             android:textAlignment="center"/>
 
-        <TextView
+        <EditText
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hier Token eingeben"
+            android:layout_marginTop="155dp"
+            android:text="@string/Tokenabfrage"
             android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp"
-            android:layout_marginTop="155dp"/>
+            android:textStyle="italic"
+            android:visibility="visible" />
 
 
     </FrameLayout>
