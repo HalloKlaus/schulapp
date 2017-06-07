@@ -23,8 +23,6 @@
         android:layout_marginTop="60dp"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary"/>
-
-
 </FrameLayout>
 
     <!--TODO : Add table for "Vertretungsplan" -->
