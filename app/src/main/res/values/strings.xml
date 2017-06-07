@@ -9,7 +9,7 @@
     <string name="Tokenabfrage">Hier bitte Token eingeben!</string>
     <string name="Platzhalter">Hier folgt noch etwas...Keine Angst!</string>
     <string name="Errormessage">Anscheind gibt es einen Error. Bitte wende dich an deinen Administrator</string>
-    <string name="Borring">Wenn dir dies angezeigt wird, dann war den Codern wohl langweilig... Man sollte denen vllt mal Kaffee und Pizza bringen</string>
+    <string name="Boring">Wenn dir dies angezeigt wird, dann war den Codern wohl langweilig... Man sollte denen vllt mal Kaffee und Pizza bringen</string>
 
 
 </resources>
