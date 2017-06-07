@@ -18,6 +18,4 @@ public class MainActivity extends AppCompatActivity {
         Log.println(Log.WARN,"Hallo","Hallo");
     }
 
-    public void hallo(){}
-
 }
