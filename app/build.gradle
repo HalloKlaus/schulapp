@@ -12,12 +12,29 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
+
+
+    signingConfigs {
+        debug {
+            storeFile file("../certificate/keystore.jks")
+            storePassword "schulapp2017"
+            keyAlias "schulapp"
+            keyPassword "schulapp2017"
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+
         release {
+            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {

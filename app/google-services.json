@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "314469419233-v42cll8os526gp7svs76g0dbbegua91p.apps.googleusercontent.com",
+          "client_id": "314469419233-k88pgln8h39k8b9qgge6pchbr6qforek.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "design.code.schulapp",
-            "certificate_hash": "8d2f95266a2cd44e6eb339e559d15a8adab18526"
+            "certificate_hash": "c651a55627fdfa6f6930d15efcdd751c1102d12f"
           }
         },
         {
