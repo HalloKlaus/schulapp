@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/uhr2"
+        android:icon="@drawable/uhr3"
         android:title="@string/title_Vertretungsplan" />
 
     <item
