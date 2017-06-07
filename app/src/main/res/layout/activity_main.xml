@@ -35,7 +35,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="25sp"
             android:textStyle="italic"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:inputType="text"/>
 
 
