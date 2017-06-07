@@ -9,14 +9,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements SecondFragment.OnFragmentInteractionListener {
+
+    private static final String db_log_tag = "DB_Log";
     private static final String TAG = "MainActivity";
+
+    private SQLiteStorageDataSource dataSource;
 
     FrameLayout frameLayout;
 
@@ -70,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
 
 
         FirebaseMessaging.getInstance().subscribeToTopic("news");
+
+        dataSource = new SQLiteStorageDataSource(this);
+
     }
 
     @Override
