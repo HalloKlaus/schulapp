@@ -6,5 +6,6 @@
     <string name="title_Einstellungen">Einstellungen</string>
     <string name="Willkommensnachricht_ohne_Token">Willkommen in der SchoolController-APP! Bitte Token eingeben.</string>
     <string name="Willkommensnachricht_mit_Token">Willkommen in der APP für deinen Schulalltag.</string>
+    <string name="Tokenabfrage">Hier bitte Token eingeben</string>
 
 </resources>
