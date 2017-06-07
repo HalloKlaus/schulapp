@@ -8,6 +8,7 @@
     <string name="Willkommensnachricht_mit_Token">Willkommen in deiner APP für deinen Schulalltag.</string>
     <string name="Tokenabfrage">Hier bitte Token eingeben!</string>
     <string name="Platzhalter">Hier folgt noch etwas...Keine Angst!</string>
+    <string name="Errormessage">Anscheind gibt es einen Error. Bitte wende dich an deinen Administrator</string>
 
 
 </resources>
