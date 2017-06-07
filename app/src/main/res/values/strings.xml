@@ -7,7 +7,7 @@
     <string name="Willkommensnachricht_ohne_Token">Willkommen in der SchoolController-APP! Bitte Token eingeben.</string>
     <string name="Willkommensnachricht_mit_Token">Willkommen in deiner APP für deinen Schulalltag.</string>
     <string name="Tokenabfrage">Hier bitte Token eingeben!</string>
-
+    <string name="Platzhalter">Hier folgt noch etwas...Keine Angst!</string>
 
 
 </resources>
