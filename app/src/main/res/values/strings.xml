@@ -8,7 +8,6 @@
     <string name="Willkommensnachricht_mit_Token">Willkommen in deiner APP für deinen Schulalltag.</string>
     <string name="Tokenabfrage">Hier bitte Token eingeben!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
