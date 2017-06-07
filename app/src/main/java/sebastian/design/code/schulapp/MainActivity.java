@@ -1,4 +1,4 @@
-package sebastian.design.code.tutorial;
+package sebastian.design.code.schulapp;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,7 +6,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
-import design.code.schulapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package sebastian.design.code.tutorial;
+package sebastian.design.code.schulapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

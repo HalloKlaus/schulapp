@@ -1,4 +1,4 @@
-package sebastian.design.code.tutorial;
+package sebastian.design.code.schulapp;
 
 import org.junit.Test;
 
