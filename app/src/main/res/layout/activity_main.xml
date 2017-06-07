@@ -32,7 +32,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:text="@string/Willkommensnachricht_ohne_Token"
-            android:textSize="20sp"
+            android:textSize="25sp"
             android:textAlignment="center"/>
 
 
