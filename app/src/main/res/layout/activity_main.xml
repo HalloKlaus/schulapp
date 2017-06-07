@@ -15,26 +15,28 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/title_Startseite"
-            android:textAlignment="center"
-            android:textSize="20sp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="35dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:text="@string/Willkommensnachricht_ohne_Token"
+            android:text="@string/Willkommensnachricht_mit_Token"
             android:textSize="25sp"
             android:textAlignment="center"/>
 
+        <EditText
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="155dp"
+            android:text="@string/Tokenabfrage"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:visibility="invisible"
+            android:inputType="text"/>
 
 
     </FrameLayout>
