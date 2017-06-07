@@ -1,7 +1,3 @@
 <resources>
-    <string name="app_name">Reuchlin-Gymnasium-Ingolstadt</string>
-    <string name="title_home">Startseite</string>
-    <string name="title_dashboard">Vertretungsplan</string>
-    <string name="title_notifications">Schulaufgabenplan</string>
-    <string name="title_Einstellungen">Einstellungen</string>
+    <string name="app_name">school controller</string>
 </resources>
