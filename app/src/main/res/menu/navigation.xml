@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_Start"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/homebutton"
         android:title="@string/title_Startseite" />
 
     <item
