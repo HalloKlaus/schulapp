@@ -20,10 +20,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="250dp"
         android:scaleType="center"
         android:adjustViewBounds="false"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@drawable/homebutton"
+        />
 
     <TextView
         android:id="@+id/textView2"
