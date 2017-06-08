@@ -9,18 +9,15 @@
         android:roundIcon="@mipmap/appicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_notification" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
-
         <activity
-            android:name="sebastian.design.code.schulapp.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,19 +26,20 @@
             </intent-filter>
         </activity>
 
-
-        <service android:name="sebastian.design.code.schulapp.FireBaseMessagingService">
+        <service android:name=".FireBaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <service android:name="sebastian.design.code.schulapp.MyFirebaseInstanceIDService">
+        <service android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".ThirdActivity" />
+        <activity android:name=".FourthActivity"></activity>
     </application>
 
 </manifest>

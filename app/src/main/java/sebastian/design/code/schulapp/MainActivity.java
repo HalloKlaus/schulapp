@@ -1,6 +1,6 @@
 package sebastian.design.code.schulapp;
 
-import android.content.ContentValues;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,13 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
-
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements SecondFragment.OnFragmentInteractionListener {
 
@@ -40,13 +37,16 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
                     final SecondFragment secondFragment = new SecondFragment();
                     changeFragment(secondFragment);
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_vertretungsplan:
                     final SecondFragment dashboardFragment = new SecondFragment();
                     changeFragment(dashboardFragment);
+                    Intent intent0 = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent0);
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_schulaufgabenplan:
                     final SecondFragment notificationFragment = new SecondFragment();
                     changeFragment(notificationFragment);
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     return true;
                 case R.id.navigation_Einstellungen:
                     final SecondFragment settingsFragment = new SecondFragment();

@@ -8,12 +8,12 @@
         android:title="@string/title_Startseite"/>
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_vertretungsplan"
         android:icon="@drawable/vertretungsplan"
         android:title="@string/title_Vertretungsplan" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_schulaufgabenplan"
         android:icon="@drawable/schulaufhabenplan"
         android:title="@string/title_Schulaufgabenplan" />
 
