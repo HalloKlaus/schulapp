@@ -3,6 +3,7 @@ package sebastian.design.code.schulapp;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.util.Log;
 
 /**
@@ -21,6 +22,8 @@ public class SQliteStorageHelper extends SQLiteOpenHelper {
     public static final String COLUMN_TIME = "time";
     public static final String COLUMN_MESSAGE = "message";
     public static final String COLUMN_SENDER = "sender";
+
+    public static final Uri CONTENT_URI = Uri.parse("schulapp://sebastian.design.code.schulapp/database-update");
 
     public static final String SQL_CREATE =
             "CREATE TABLE " + TABLE_STORAGE_LIST +
