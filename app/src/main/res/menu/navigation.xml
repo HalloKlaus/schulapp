@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/vertretungsplan"
+        android:icon="@drawable/vertretungsplan2"
         android:title="@string/title_Vertretungsplan" />
 
     <item

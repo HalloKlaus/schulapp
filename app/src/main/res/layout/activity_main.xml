@@ -20,13 +20,14 @@
             android:text="@string/Platzhalter"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:visibility="invisible"
+            />
         <ListView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="50sp"/>
-    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -34,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/colorNavigation"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"/>
 
+</FrameLayout>
 </LinearLayout>
