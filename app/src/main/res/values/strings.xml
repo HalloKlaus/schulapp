@@ -11,5 +11,8 @@
     <string name="Errormessage">Anscheind gibt es einen Error. Bitte wende dich an deinen Administrator</string>
     <string name="Boring">Wenn dir dies angezeigt wird, dann war den Codern wohl langweilig... Man sollte denen vllt mal Kaffee und Pizza bringen</string>
     <string name="title_Mitteilungen">Mitteilungen</string>
-
+    <string name="title_schuelerausweis">Dein Schülerausweis</string>
+    <string name="title_Schuleanrufen">Rufe im Sekretariat an, wenn du Probleme hast! Ganz einfach ohne großes Nummer suchen!</string>
+    <string name="Forbidden">Was machst du hier? Weg da!</string>
+    <string name="Update">Gute Nachrichten! Die Entwickler haben einen neue Version freigegeben! Hol sie dir jetzt!!></string>
 </resources>
