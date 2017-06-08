@@ -14,16 +14,6 @@
         android:textSize="25sp"
         android:textColor="@color/colorPrimary"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Platzhalter"
-        android:textAlignment="center"
-        android:layout_marginTop="60dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorPrimary"/>
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -34,7 +24,16 @@
         android:scaleType="center"
         android:adjustViewBounds="false"
         app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/Platzhalter"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
 </FrameLayout>
 
     <!--TODO : Add table for "Vertretungsplan" -->
-    <!-- TODO: Add Time Picker -->
