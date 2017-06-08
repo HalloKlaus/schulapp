@@ -21,7 +21,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             android:textAlignment="center"
-            android:visibility="invisible"
+            android:visibility="visible"
             />
         <ListView
             android:id="@+id/list_view"
@@ -34,6 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        app:itemBackground="@color/colorNavigation"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         android:background="@color/colorNavigation"
         app:menu="@menu/navigation"/>
 

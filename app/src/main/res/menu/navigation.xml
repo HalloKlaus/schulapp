@@ -9,12 +9,12 @@
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/vertretungsplan2"
+        android:icon="@drawable/vertretungsplan"
         android:title="@string/title_Vertretungsplan" />
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/schulaufgaben"
+        android:icon="@drawable/schulaufhabenplan"
         android:title="@string/title_Schulaufgabenplan" />
 
     <item
