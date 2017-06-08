@@ -2,20 +2,15 @@ package sebastian.design.code.schulapp;
 
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewDebug;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.List;
+
+import static java.security.AccessController.getContext;
 
 /**
  * Created by Sebastian on 07.06.2017.
@@ -44,7 +39,7 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
         displayNotification("Schulapp", remoteMessage.getNotification().getBody());
 
-        dataSource = new SQLiteStorageDataSource(this);
+        dataSource = new SQLiteStorageDataSource(this, null);
         dataSource.open();
 
         Storage storage = dataSource.createNewNews(remoteMessage.getNotification().getBody(), Long.toString(remoteMessage.getSentTime()), "sender");
@@ -53,7 +48,6 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "ID: " + storage.getId() + ", Inhalt: " + storage.toString());
 
         Log.d(TAG, "Folgende Einträge sind in der Datenbank vorhanden:");
-
 
         Log.d(TAG, "Die Datenquelle wird geschlossen.");
         dataSource.close();

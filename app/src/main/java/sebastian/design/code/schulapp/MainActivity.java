@@ -81,7 +81,20 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
 
         FirebaseMessaging.getInstance().subscribeToTopic("news");
 
-        dataSource = new SQLiteStorageDataSource(this);
+        dataSource = new SQLiteStorageDataSource(this, new SQLiteStorageDataSource.DataObserver() {
+            @Override
+            public void updated() {
+                dataSource.open();
+                showAllListEntries();
+                dataSource.close();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         dataSource.open();
         showAllListEntries();
         dataSource.close();

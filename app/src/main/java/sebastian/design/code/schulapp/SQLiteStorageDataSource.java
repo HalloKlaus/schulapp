@@ -2,21 +2,26 @@ package sebastian.design.code.schulapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.ContentObservable;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+
+import static java.security.AccessController.getContext;
 
 /**
  * Created by Sebastian on 07.06.2017.
  */
 
-public class SQLiteStorageDataSource {
+public class SQLiteStorageDataSource extends Observable {
 
     private static final String LOG_TAG = "StorageDataSource";
     private static final String INSERT_ID = "IID";
+    private final List<DataObserver> observers = new ArrayList<>();
 
     private String[] columns = {
             SQliteStorageHelper.COLUMN_ID,
@@ -25,12 +30,17 @@ public class SQLiteStorageDataSource {
             SQliteStorageHelper.COLUMN_TIME
     };
 
+    public interface DataObserver {
+        void updated();
+    }
+
     private SQLiteDatabase database;
     private SQliteStorageHelper storageHelper;
 
-    public SQLiteStorageDataSource(Context context){
+    public SQLiteStorageDataSource(Context context, DataObserver observer){
         Log.d(LOG_TAG, "Unsere DataSource erzeugt jetzt den DBHelper");
         storageHelper = new SQliteStorageHelper(context);
+        observers.add(observer);
     }
 
     public void open(){
@@ -62,7 +72,9 @@ public class SQLiteStorageDataSource {
         cursor.close();
 
         Log.i(INSERT_ID, "Die Insert_ID des Datensatzes ist: " + insertId);
-
+        for (DataObserver observer : observers) {
+            observer.updated();
+        }
         return storage;
     }
 
