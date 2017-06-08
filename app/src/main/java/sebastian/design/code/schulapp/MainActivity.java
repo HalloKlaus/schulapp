@@ -18,6 +18,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity implements SecondFragment.OnFragmentInteractionListener {
 
@@ -79,7 +81,10 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
 
         FirebaseMessaging.getInstance().subscribeToTopic("news");
 
-        ListView listView = (ListView) findViewById(R.id.list_view);
+        dataSource = new SQLiteStorageDataSource(this);
+        dataSource.open();
+        showAllListEntries();
+        dataSource.close();
 
     }
 
@@ -87,5 +92,20 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
     public void onFragmentInteraction(Uri uri) {
         Log.v(TAG, "onFragmentInteraction()");
     }
+
+
+
+    public void showAllListEntries () {
+        List<Storage> storageList = dataSource.getAllStorages();
+
+        ArrayAdapter<Storage> storageArrayAdapter = new ArrayAdapter<> (
+                this,
+                android.R.layout.simple_list_item_multiple_choice,
+                storageList);
+
+        ListView storageListView = (ListView) findViewById(R.id.list_view);
+        storageListView.setAdapter(storageArrayAdapter);
+    }
+
 
 }
