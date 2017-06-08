@@ -1,4 +1,4 @@
-# schulapp
+# schulapp aka. SchoolController
 
 Dies ist ein privates Projekt. Es kann betrachtet, jedoch nicht bearbeitet werden.
 Bearbeitet werden kann dieses nur von Teammitgliedern.
