@@ -16,6 +16,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     private static final String TAG = "MyFirebaseIIDService";
     final String tokenPreferenceKey = "fcm_token";
 
+
     @Override
     public void onTokenRefresh() {
         // Get updated InstanceID token.

@@ -79,21 +79,7 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
 
         FirebaseMessaging.getInstance().subscribeToTopic("news");
 
-        dataSource = new SQLiteStorageDataSource(this);
-
-        Log.d(db_log_tag, "Die Datenquelle wird geöffnet.");
-        dataSource.open();
-
-        Storage shoppingMemo = dataSource.createNewNews("Tstfabirkat", "12:30", "Sender");
-        Log.d(db_log_tag, "Es wurde der folgende Eintrag in die Datenbank geschrieben:");
-        Log.d(db_log_tag, "ID: " + shoppingMemo.getId() + ", Inhalt: " + shoppingMemo.toString());
-
-        Log.d(db_log_tag, "Folgende Einträge sind in der Datenbank vorhanden:");
-        showAllListEntries();
-
-
-        Log.d(db_log_tag, "Die Datenquelle wird geschlossen.");
-        dataSource.close();
+        ListView listView = (ListView) findViewById(R.id.list_view);
 
     }
 
@@ -102,15 +88,4 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
         Log.v(TAG, "onFragmentInteraction()");
     }
 
-    private void showAllListEntries () {
-        List<Storage> shoppingMemoList = dataSource.getAllStorages();
-
-        ArrayAdapter<Storage> shoppingMemoArrayAdapter = new ArrayAdapter<> (
-                this,
-                android.R.layout.simple_list_item_multiple_choice,
-                shoppingMemoList);
-
-        ListView shoppingMemosListView = (ListView) findViewById(R.id.list_view);
-        shoppingMemosListView.setAdapter(shoppingMemoArrayAdapter);
-    }
 }
