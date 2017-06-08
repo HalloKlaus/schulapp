@@ -1,5 +1,6 @@
 package sebastian.design.code.schulapp;
 
+import android.content.ContentValues;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,11 +9,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ListView;
 
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SecondFragment.OnFragmentInteractionListener {
 
@@ -76,10 +81,36 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
 
         dataSource = new SQLiteStorageDataSource(this);
 
+        Log.d(db_log_tag, "Die Datenquelle wird geöffnet.");
+        dataSource.open();
+
+        Storage shoppingMemo = dataSource.createNewNews("Tstfabirkat", "12:30", "Sender");
+        Log.d(db_log_tag, "Es wurde der folgende Eintrag in die Datenbank geschrieben:");
+        Log.d(db_log_tag, "ID: " + shoppingMemo.getId() + ", Inhalt: " + shoppingMemo.toString());
+
+        Log.d(db_log_tag, "Folgende Einträge sind in der Datenbank vorhanden:");
+        showAllListEntries();
+
+
+        Log.d(db_log_tag, "Die Datenquelle wird geschlossen.");
+        dataSource.close();
+
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
         Log.v(TAG, "onFragmentInteraction()");
+    }
+
+    private void showAllListEntries () {
+        List<Storage> shoppingMemoList = dataSource.getAllStorages();
+
+        ArrayAdapter<Storage> shoppingMemoArrayAdapter = new ArrayAdapter<> (
+                this,
+                android.R.layout.simple_list_item_multiple_choice,
+                shoppingMemoList);
+
+        ListView shoppingMemosListView = (ListView) findViewById(R.id.list_view);
+        shoppingMemosListView.setAdapter(shoppingMemoArrayAdapter);
     }
 }
