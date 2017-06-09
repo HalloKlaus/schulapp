@@ -39,18 +39,18 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
 
         displayNotification("Schulapp", remoteMessage.getNotification().getBody());
 
-        dataSource = new SQLiteStorageDataSource(this, null);
-        dataSource.open();
-
-        Storage storage = dataSource.createNewNews(remoteMessage.getNotification().getBody(), Long.toString(remoteMessage.getSentTime()), "sender");
-
-        Log.d(TAG, "Es wurde der folgende Eintrag in die Datenbank geschrieben:");
-        Log.d(TAG, "ID: " + storage.getId() + ", Inhalt: " + storage.toString());
-
-        Log.d(TAG, "Folgende Einträge sind in der Datenbank vorhanden:");
-
-        Log.d(TAG, "Die Datenquelle wird geschlossen.");
-        dataSource.close();
+//        dataSource = new SQLiteStorageDataSource(this, null);
+//        dataSource.open();
+//
+//        Storage storage = dataSource.createNewNews(remoteMessage.getNotification().getBody(), Long.toString(remoteMessage.getSentTime()), "sender");
+//
+//        Log.d(TAG, "Es wurde der folgende Eintrag in die Datenbank geschrieben:");
+//        Log.d(TAG, "ID: " + storage.getId() + ", Inhalt: " + storage.toString());
+//
+//        Log.d(TAG, "Folgende Einträge sind in der Datenbank vorhanden:");
+//
+//        Log.d(TAG, "Die Datenquelle wird geschlossen.");
+//        dataSource.close();
 
     }
 

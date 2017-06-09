@@ -13,21 +13,28 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements  FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener, FourthFragment.OnFragmentInteractionListener {
 
-    private static final String db_log_tag = "DB_Log";
     private static final String TAG = "MainActivity";
+    private DatabaseReference root;
+    private LinkedList<Storage> newsMessageRoot = new LinkedList<>();
     private SecondFragment secondFragment = new SecondFragment();
     private ThirdFragment thirdFragment = new ThirdFragment();
     private FourthFragment fourthFragment = new FourthFragment();
     private FirstFragment firstFragment = new FirstFragment();
-
-    private SQLiteStorageDataSource dataSource;
 
     FrameLayout frameLayout;
 
@@ -58,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements  FirstFragment.On
 
 
 
+
     private void changeFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
@@ -78,48 +86,104 @@ public class MainActivity extends AppCompatActivity implements  FirstFragment.On
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d("FBID","Refreshed Token:" + refreshedToken);
 
+//        FirebaseMessaging.getInstance().subscribeToTopic("news");
+//
+//        dataSource = new SQLiteStorageDataSource(this, new SQLiteStorageDataSource.DataObserver() {
+//            @Override
+//            public void updated() {
+//                dataSource.open();
+//                showAllListEntries();
+//                dataSource.close();
+//            }
+//        });
 
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        root = FirebaseDatabase.getInstance().getReference();
 
-        dataSource = new SQLiteStorageDataSource(this, new SQLiteStorageDataSource.DataObserver() {
+        root.addChildEventListener(new ChildEventListener() {
             @Override
-            public void updated() {
-                dataSource.open();
-                showAllListEntries();
-                dataSource.close();
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                append_news(dataSnapshot);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                append_news(dataSnapshot);
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 
         changeFragment(firstFragment);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        dataSource.open();
-        showAllListEntries();
-        dataSource.close();
 
     }
+
+    public HashMap<String, String> news;
+
+    private void append_news(DataSnapshot dataSnapshot) {
+
+        Iterator i = dataSnapshot.getChildren().iterator();
+
+        LinkedList<Storage> newsMessage = new LinkedList<>();
+
+        while (i.hasNext()) {
+            news = (HashMap<String, String>) ((DataSnapshot) i.next()).getValue();
+
+            //Log.i("Test", news.get("message") + news.get("sender") + news.get("timestamp"));
+
+            String newsMsg, newsSender, newsTimestamp;
+            newsMsg = news.get("message");
+            newsSender = news.get("sender");
+            newsTimestamp = news.get("timestamp");
+
+            Log.i("Test", newsMsg + newsSender + newsTimestamp);
+
+            Storage storage = new Storage(newsMsg, newsTimestamp, newsSender);
+
+            newsMessage.add(storage);
+            Log.d("News", "append_news: appended 1 item");
+        }
+
+
+        this.newsMessageRoot = newsMessage;
+        //showAllListEntries();
+    }
+
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {
         Log.v(TAG, "onFragmentInteraction()");
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+    }
 
     public void showAllListEntries () {
-        List<Storage> storageList = dataSource.getAllStorages();
+        LinkedList<Storage> storageList = this.newsMessageRoot;
 
         ArrayAdapter<Storage> storageArrayAdapter = new ArrayAdapter<> (
                 this,
                 android.R.layout.simple_list_item_multiple_choice,
                 storageList);
+        Log.d(TAG, "showAllListEntries: In Storage -> " + storageList.size());
 
-        ListView storageListView = (ListView) findViewById(R.id.list_view);
+        ListView storageListView = (ListView) findViewById(R.id.listViewNews);
         storageListView.setAdapter(storageArrayAdapter);
     }
-
-
 }

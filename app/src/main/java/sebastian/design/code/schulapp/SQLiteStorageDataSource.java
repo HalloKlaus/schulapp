@@ -90,7 +90,7 @@ public class SQLiteStorageDataSource extends Observable {
         long id = cursor.getLong(idIndex);
         String sender = cursor.getString(idSender);
 
-        Storage storage = new Storage(message, time,sender, id);
+        Storage storage = new Storage(message, time,sender);
 
         return storage;
     }

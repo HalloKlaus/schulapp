@@ -12,7 +12,7 @@ public class Storage {
     private long id;
 
 
-    public Storage(String message, String time, String sender, long id) {
+    public Storage(String message, String time, String sender) {
         this.message = message;
         this.time = time;
         this.sender = sender;

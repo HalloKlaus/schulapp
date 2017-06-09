@@ -6,13 +6,13 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Boring"
-        android:textSize="39sp"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/Boring"-->
+        <!--android:textSize="39sp"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="@color/colorAccent"/>-->
 
     <ListView
         android:id="@+id/list_view"

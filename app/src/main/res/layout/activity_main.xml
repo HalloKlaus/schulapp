@@ -26,5 +26,10 @@
         android:background="@color/colorNavigation"
         app:menu="@menu/navigation"/>
 
-</FrameLayout>
+        <ListView
+            android:id="@+id/listViewNews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
 </LinearLayout>
