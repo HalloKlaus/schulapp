@@ -9,13 +9,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/Boring" />
+        android:text="Vertretungsplan"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:layout_marginTop="5sp"
+        android:textColor="@color/colorPrimaryDark"/>
 
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="283dp"
-        android:layout_height="387dp"
+        android:layout_width="327dp"
+        android:layout_height="469dp"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="50sp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:visibility="visible"
         app:srcCompat="@drawable/vertretungsplanpimp" />
 
 </FrameLayout>
