@@ -18,10 +18,14 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements SecondFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements  FirstFragment.OnFragmentInteractionListener, SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener, FourthFragment.OnFragmentInteractionListener {
 
     private static final String db_log_tag = "DB_Log";
     private static final String TAG = "MainActivity";
+    private SecondFragment secondFragment = new SecondFragment();
+    private ThirdFragment thirdFragment = new ThirdFragment();
+    private FourthFragment fourthFragment = new FourthFragment();
+    private FirstFragment firstFragment = new FirstFragment();
 
     private SQLiteStorageDataSource dataSource;
 
@@ -34,29 +38,25 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_Start:
-                    final SecondFragment secondFragment = new SecondFragment();
-                    changeFragment(secondFragment);
+                    changeFragment(firstFragment);
                     return true;
                 case R.id.navigation_vertretungsplan:
-                    final SecondFragment dashboardFragment = new SecondFragment();
-                    changeFragment(dashboardFragment);
-                    Intent intent0 = new Intent(MainActivity.this, MainActivity.class);
-                    startActivity(intent0);
+                    changeFragment (secondFragment);
                     return true;
                 case R.id.navigation_schulaufgabenplan:
-                    final SecondFragment notificationFragment = new SecondFragment();
-                    changeFragment(notificationFragment);
-                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    changeFragment(thirdFragment);
                     return true;
                 case R.id.navigation_Einstellungen:
-                    final SecondFragment settingsFragment = new SecondFragment();
-                    changeFragment(settingsFragment);
+                    changeFragment(fourthFragment);
                     return true;
             }
             return false;
         }
 
     };
+
+
+
 
     private void changeFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements SecondFragment.On
             }
         });
 
+        changeFragment(firstFragment);
     }
 
     @Override

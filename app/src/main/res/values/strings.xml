@@ -16,4 +16,7 @@
     <string name="Forbidden">Was machst du hier? Weg da!</string>
     <string name="Update">Gute Nachrichten! Die Entwickler haben einen neue Version freigegeben! Hol sie dir jetzt!!></string>
     <string name="Ansicht">Ansicht wechseln</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
