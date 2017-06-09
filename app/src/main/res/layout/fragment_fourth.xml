@@ -8,8 +8,44 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="FourthFragment"
+        android:text="Einstellungen"
+        android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textSize="25sp" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App offline setzen"
+        android:layout_marginTop="70sp"
+        android:textSize="25sp"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abwehrkräfte aktivieren (obs was bringt...)"
+        android:layout_marginTop="120sp"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/switch3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="APP neustarten"
+        android:layout_marginTop="190sp"
+        android:textSize="25sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Im Sekretariat anrufen"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
+        android:layout_marginTop="240sp"/>
+
+
+
 
 </FrameLayout>
