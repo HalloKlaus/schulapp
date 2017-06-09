@@ -14,4 +14,10 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent"/>
 
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50sp"/>
+
 </FrameLayout>
