@@ -1,5 +1,7 @@
 package sebastian.design.code.schulapp;
 
+import android.*;
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 
 /**
@@ -81,11 +84,15 @@ public class FourthFragment extends Fragment {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("Test", "Test");
-
-                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:" + getString(R.string.schulnummer)));
-                startActivity(callIntent);
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + getString(R.string.schulnummer)));
+                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                    CharSequence toastText = "Vergib die Berechtigung zum Telefonieren in den Einstellungen.";
+                    Toast toast = Toast.makeText(getContext(), toastText, Toast.LENGTH_LONG);
+                    toast.show();
+                }else {
+                    startActivity(intent);
+                }
             }
         });
 
