@@ -55,7 +55,7 @@ public class Storage {
 
     @Override
     public String toString() {
-        String output = message + " von " + sender;
+        String output = message + " von " + sender + " um " + time;
 
         return output;
     }
