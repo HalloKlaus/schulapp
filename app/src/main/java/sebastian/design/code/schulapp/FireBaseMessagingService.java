@@ -8,10 +8,6 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import java.util.List;
-
-import static java.security.AccessController.getContext;
-
 /**
  * Created by Sebastian on 07.06.2017.
  */
@@ -19,7 +15,6 @@ import static java.security.AccessController.getContext;
 public class FireBaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "FBMSG";
-    private SQLiteStorageDataSource dataSource;
 
 
     @Override
@@ -38,20 +33,6 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
         }
 
         displayNotification("Schulapp", remoteMessage.getNotification().getBody());
-
-//        dataSource = new SQLiteStorageDataSource(this, null);
-//        dataSource.open();
-//
-//        Storage storage = dataSource.createNewNews(remoteMessage.getNotification().getBody(), Long.toString(remoteMessage.getSentTime()), "sender");
-//
-//        Log.d(TAG, "Es wurde der folgende Eintrag in die Datenbank geschrieben:");
-//        Log.d(TAG, "ID: " + storage.getId() + ", Inhalt: " + storage.toString());
-//
-//        Log.d(TAG, "Folgende Einträge sind in der Datenbank vorhanden:");
-//
-//        Log.d(TAG, "Die Datenquelle wird geschlossen.");
-//        dataSource.close();
-
     }
 
     private void displayNotification(String title, String contentText){

@@ -9,14 +9,12 @@ public class Storage {
     private String message;
     private String time;
     private String sender;
-    private long id;
 
 
     public Storage(String message, String time, String sender) {
         this.message = message;
         this.time = time;
         this.sender = sender;
-        this.id = id;
     }
 
     public String getMessage() {
@@ -42,14 +40,6 @@ public class Storage {
 
     public void setSender(String sender) {
         this.sender = sender;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
 
