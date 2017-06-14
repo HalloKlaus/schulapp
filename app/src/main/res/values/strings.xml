@@ -4,9 +4,9 @@
     <string name="title_Vertretungsplan">Vertretungsplan</string>
     <string name="title_Schulaufgabenplan">Schulaufgabenplan</string>
     <string name="title_Einstellungen">Einstellungen</string>
-    <string name="Platzhalter">Hier folgt noch etwas...Keine Angst!</string>
-    <string name="Boring">Wenn dir dies angezeigt wird, dann war den Codern wohl langweilig... Man sollte denen vllt mal Kaffee und Pizza bringen</string>
-    <string name="Forbidden">Was machst du hier? Weg da!</string>
-    <string name="Update">Gute Nachrichten! Die Entwickler haben einen neue Version freigegeben! Hol sie dir jetzt!!></string>
+    <string name="platzhalter">Hier folgt noch etwas...Keine Angst!</string>
+    <string name="boring">Wenn dir dies angezeigt wird, dann war den Codern wohl langweilig... Man sollte denen vllt mal Kaffee und Pizza bringen</string>
+    <string name="forbidden">Was machst du hier? Weg da!</string>
+    <string name="update">Gute Nachrichten! Die Entwickler haben einen neue Version freigegeben! Hol sie dir jetzt!!></string>
     <string name="schulnummer">123456789</string>
 </resources>
