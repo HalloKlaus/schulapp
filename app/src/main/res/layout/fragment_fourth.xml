@@ -48,6 +48,19 @@
         android:layout_marginLeft="100sp"
         android:layout_marginTop="280sp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350sp"
+        android:text="ENTWICKLER UND RECHTEINHABER"
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400sp"
+        android:textAlignment="center"
+        android:text="Hier Eure Namen untereinander eintragen!"/>
+
 
 
 </FrameLayout>
