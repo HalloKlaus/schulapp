@@ -9,4 +9,6 @@
     <string name="forbidden">Was machst du hier? Weg da!</string>
     <string name="update">Gute Nachrichten! Die Entwickler haben einen neue Version freigegeben! Hol sie dir jetzt!!></string>
     <string name="schulnummer">123456789</string>
+    <string name="copyright">Alle Rechte sind den Autoren vorbehalten. Unerlaubte Kopien oder die unerlaubte Verwendung ist strafbar und stellt eine Urheberrechtsverletzung da</string>
+    <string name="entwickler">Hier in strings eure Namen eingeben</string>
 </resources>

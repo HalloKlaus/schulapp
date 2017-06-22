@@ -59,8 +59,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="400sp"
         android:textAlignment="center"
-        android:text="Hier Eure Namen untereinander eintragen!"/>
-
+        android:text="@string/entwickler"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="490sp"
+        android:textAlignment="center"
+        android:text="@string/copyright"
+        android:textSize="15sp"/>
 
 
 </FrameLayout>
