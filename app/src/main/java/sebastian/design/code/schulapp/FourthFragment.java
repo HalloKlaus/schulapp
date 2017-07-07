@@ -67,6 +67,8 @@ public class FourthFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        getActivity().setTitle(R.string.title_Einstellungen);
+
     }
 
     @Override
